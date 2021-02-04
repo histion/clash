@@ -17,6 +17,5 @@ git add -A
 git commit -m 'deploy'
 
 # 部署到 https://<USERNAME>.github.io
-git push -f git@github.com:histion/histion.github.io/histion-s-Blogger.git main
-
+git push -f git@github.com:histion/histion.github.io/histion-s-Blogger.git master
 cd -

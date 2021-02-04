@@ -27,13 +27,13 @@
     </div>
     <div class="site-info">
       <p>
-        <i class="icon icon-copyright"></i>2017-2021
+        <i class="icon icon-copyright"></i>@2019-2021
         <i class="icon icon-heart"></i>
         {{ $config.title }}
       </p>
       <p>
         Theme -
-        <a rel="noopener noreferrer" target="_blank" href="https://github.com/chanshiyucx/aurora">Aurora</a>
+        <a rel="noopener noreferrer" target="_blank" href="https://github.com/histion">Histion</a>
         | {{ $config.subtitle }}
       </p>
     </div>
