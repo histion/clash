@@ -1,4 +1,9 @@
 /**
+ * 根据窗口宽度判断是否为移动端
+ */
+export const isMobile = () => document.body.clientWidth < 876
+
+/**
  * 生成范围内随机整数
  */
 export const random = (a, b) => parseInt(Math.random() * (b - a + 1) + a, 10)
@@ -6,20 +11,20 @@ export const random = (a, b) => parseInt(Math.random() * (b - a + 1) + a, 10)
 /**
  * Fisher–Yates Shuffle 洗牌算法
  */
-export const shuffle = array => {
+export const shuffle = (array) => {
   let m = array.length
   let i
   while (m) {
     i = Math.floor(Math.random() * m--)
     ;[array[m], array[i]] = [array[i], array[m]]
   }
-
   return array
 }
+
 /**
  * url 转换
  */
-export const getLocation = href => {
+export const getLocation = (href) => {
   const a = document.createElement('a')
   a.href = href
   return a
@@ -37,7 +42,7 @@ export const parseTime = (time, format = '{y}-{m}-{d} {h}:{i}:{s}') => {
     h: date.getHours(),
     i: date.getMinutes(),
     s: date.getSeconds(),
-    a: date.getDay()
+    a: date.getDay(),
   }
   const time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
     let value = formatObj[key]
@@ -67,12 +72,12 @@ export const localRead = (key, defaultValue = '') => {
 }
 
 /**
- * 图片 cdn 加速
+ * 图片 cdn 加速，只对时雨个人使用
  */
 const isMe = location.host.includes('chanshiyu.com')
 const GithubPrefix = 'raw.githubusercontent.com/chanshiyucx/yoi/master'
 const JSDriverPrefix = 'cdn.jsdelivr.net/gh/chanshiyucx/yoi@latest'
-export const fileCDN = url => {
+export const fileCDN = (url) => {
   if (isMe && url.includes(GithubPrefix)) {
     return url.replace(GithubPrefix, JSDriverPrefix)
   }
@@ -82,7 +87,7 @@ export const fileCDN = url => {
 /**
  * 图片尺寸处理
  */
-export const handleImg = href => {
+export const handleImg = (href) => {
   const urlParams = new URLSearchParams(href.split('?')[1])
   const vw = urlParams.get('vw')
   const vh = urlParams.get('vh')

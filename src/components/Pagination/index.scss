@@ -1,7 +1,6 @@
 .pagination {
   position: relative;
   width: 160px;
-  height: 40px;
   z-index: $zindex-2;
 
   .previous {
@@ -12,7 +11,7 @@
     line-height: 40px;
     font-size: $font-size-large;
     background-color: $bg-white-dim;
-    box-shadow: $card-shadow-base;
+    box-shadow: $card-shadow;
     transition: all 0.3s ease-out;
     text-shadow: 0 1px 1px $purple-dark;
     text-align: center;
@@ -72,14 +71,14 @@
     }
     &::before {
       top: 0;
-      left: 0;
-      width: 6px;
+      left: -1px;
+      width: 7px;
       height: 2px;
     }
     &::after {
       top: 0;
-      right: 0;
-      width: 6px;
+      right: -1px;
+      width: 7px;
       height: 2px;
     }
   }

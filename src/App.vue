@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <vue-progress-bar></vue-progress-bar>
+    <vue-progress-bar />
     <Transition name="header-transform" mode="out-in">
       <Header v-show="showHeader" />
     </Transition>
     <main class="main">
       <Transition name="fade-transform" mode="out-in">
-        <keep-alive :exclude="['post']" :max="10">
+        <keep-alive :exclude="['Post']" :max="10">
           <RouterView />
         </keep-alive>
       </Transition>
     </main>
-    <Footer @dropPanel="showPanel = true" />
-    <Panel :showPanel="showPanel" @hidePanel="showPanel = false" />
+    <Footer />
+    <Panel />
     <ScrollTop />
   </div>
 </template>
@@ -22,7 +22,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Panel from '@/components/Panel'
 import ScrollTop from '@/components/ScrollTop'
-import { getLocation } from '@/utils'
+import { getLocation, isMobile } from '@/utils'
 
 export default {
   name: 'App',
@@ -30,40 +30,61 @@ export default {
     Header,
     Footer,
     Panel,
-    ScrollTop
+    ScrollTop,
   },
   data() {
     return {
       showHeader: true,
-      showPanel: false
+      lastResizeTimer: '',
+      lastResizeAt: new Date(),
     }
   },
   watch: {
     $route: {
       immediate: true,
       handler(val) {
-        if (this.$isMobile) {
-          this.showHeader = val && val.name !== 'post'
+        if (this.$isMobile.value) {
+          this.showHeader = val.name !== 'post'
         }
         if (val.name === 'post') {
           setTimeout(this.scrollTop, 500)
         }
-      }
-    }
+      },
+    },
+    '$isMobile.value': {
+      immediate: true,
+      handler(val) {
+        if (val) {
+          this.showHeader = this.$route && this.$route.name !== 'post'
+        } else {
+          this.showHeader = true
+        }
+      },
+    },
   },
   created() {
-    this.initSite()
     this.initProgress()
     this.visitorStatistics()
   },
   mounted() {
     this.$Progress.finish()
+    window.addEventListener('resize', this.handleResize)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize)
   },
   methods: {
-    // 初始化站点信息
-    initSite() {
-      const { title, subtitle } = this.$config
-      document.title = `${title} | ${subtitle}`
+    // 窗口监听
+    handleResize() {
+      const now = new Date()
+      if (now - this.lastResizeAt <= 150) return
+      this.lastResizeAt = now
+      this.$isMobile.value = isMobile()
+
+      clearTimeout(this.lastResizeTimer)
+      this.lastResizeTimer = setTimeout(() => {
+        this.$isMobile.value = isMobile()
+      }, 300)
     },
     // 注册顶部进度条
     initProgress() {
@@ -85,8 +106,8 @@ export default {
     // 滚动到顶部
     scrollTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-  }
+    },
+  },
 }
 </script>
 

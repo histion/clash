@@ -22,27 +22,27 @@
 <script>
 import images from '@/assets/images'
 
-const { touhou, school } = images
+const { preview } = images
 
 export default {
   name: 'Theme',
   props: {
     theme: {
       type: String,
-      default: 'touhou'
-    }
+      default: 'touhou',
+    },
   },
   data() {
     return {
-      touhou,
-      school
+      touhou: preview.touhou,
+      school: preview.school,
     }
   },
   methods: {
     switchTheme(theme) {
       this.$emit('switchTheme', theme)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -65,6 +65,7 @@ export default {
     border-radius: 3px;
 
     > div {
+      display: flex;
       width: 212px;
       height: 110px;
       overflow: hidden;
@@ -91,12 +92,10 @@ export default {
 
   .touhou {
     img {
-      margin: 10px;
       width: 192px;
       height: 90px;
     }
   }
-
   .school {
     img {
       width: 212px;

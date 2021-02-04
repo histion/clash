@@ -13,8 +13,8 @@ export default {
   methods: {
     zoom(src) {
       this.$emit('zoom', src)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -36,7 +36,6 @@ export default {
     width: 150px;
     height: 150px;
     border-radius: 3px;
-    box-shadow: $card-shadow;
   }
 }
 </style>

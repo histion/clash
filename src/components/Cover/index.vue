@@ -9,26 +9,26 @@
 import { fileCDN } from '@/utils'
 
 export default {
-  name: 'MagicImg',
+  name: 'Cover',
   props: {
     src: {
       type: String,
-      default: ''
+      default: '',
     },
     alt: {
       type: String,
-      default: ''
+      default: '',
     },
     loadCover: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       defaultCover: this.$config.defaultCover,
       imgSrc: '',
-      visible: false
+      visible: false,
     }
   },
   watch: {
@@ -38,22 +38,22 @@ export default {
         if (val) {
           this.loadImg()
         }
-      }
-    }
+      },
+    },
   },
   methods: {
     loadImg() {
       const cdnUrl = fileCDN(this.src)
 
       const img = new Image()
-      img.onload = () => {
+      img.onload = img.onerror = () => {
         this.imgSrc = cdnUrl
         this.$emit('loadNext')
         this.$nextTick(() => (this.visible = true))
       }
       img.src = cdnUrl
-    }
-  }
+    },
+  },
 }
 </script>
 

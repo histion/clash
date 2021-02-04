@@ -1,7 +1,7 @@
 <template>
-  <footer id="footer">
-    <div class="prpr" v-if="!$isMobile">
-      <div v-if="showWaifu" class="waifu">
+  <footer>
+    <div class="prpr" v-if="!$isMobile.value">
+      <div class="waifu" v-if="showWaifu">
         <div v-show="tips && isMini" :class="['tips', this.waifu === 'tia' && 'tia']" v-html="tips"></div>
         <canvas @click="handleClickWaifu" id="live2d" width="280" height="250" />
       </div>
@@ -27,19 +27,18 @@
     </div>
     <div class="site-info">
       <p>
-        <i class="icon icon-copyright"></i>2017-2020
+        <i class="icon icon-copyright"></i>@2019-2021
         <i class="icon icon-heart"></i>
         {{ $config.title }}
       </p>
       <p>
         Theme -
-        <a rel="noopener noreferrer" target="_blank" href="https://github.com/chanshiyucx/aurora">Aurora</a>
-        |
-        {{ $config.subtitle }}
+        <a rel="noopener noreferrer" target="_blank" href="https://github.com/histion">Histion</a>
+        | {{ $config.subtitle }}
       </p>
     </div>
     <img
-      v-if="!$isMobile"
+      v-if="!$isMobile.value"
       class="sakura cursor"
       :src="sakura"
       @click="dropPanel"
@@ -68,24 +67,23 @@ export default {
       sakura,
       showWaifu: true,
       waifu: 'tia',
-      textures: '',
       menu: [
         { icon: 'venus-double', type: 'switch' },
         { icon: 't-shirt', type: 'dressup' },
         { icon: 'camera', type: 'takephoto' },
         { icon: 'comment', type: 'talk' },
-        { icon: 'cancel-outline', type: 'close' }
+        { icon: 'cancel-outline', type: 'close' },
       ],
       audio: this.$config.APlayer,
-      isMini: true
+      isMini: true,
     }
   },
   computed: mapState({
-    tips: state => state.tips,
-    tipsUpdateAt: state => state.tipsUpdateAt
+    tips: (state) => state.tips,
+    tipsUpdateAt: (state) => state.tipsUpdateAt,
   }),
   mounted() {
-    if (!this.$isMobile) {
+    if (!this.$isMobile.value) {
       this.dressup()
       this.loopTips()
     }
@@ -95,11 +93,10 @@ export default {
       if (switchWaifu) this.waifu = this.waifu === 'tia' ? 'pio' : 'tia'
       // 获取装扮
       const waifuCostume = costume[this.waifu]
-      let textures = this.textures
-      while (textures === this.textures) {
+      let textures
+      while (!textures || textures === model.textures[0]) {
         textures = waifuCostume[random(0, waifuCostume.length - 1)]
       }
-      this.textures = textures
       // 获取模型
       model.model = `moc/${this.waifu}.moc`
       model.textures = [textures]
@@ -150,11 +147,9 @@ export default {
           this.$store.dispatch('showTips', { tips: clickTips.takePhoto })
           break
         case 'talk':
-          {
-            const inx = random(0, hitokotos.length - 1)
-            const tips = hitokotos[inx].hitokoto
-            this.$store.dispatch('showTips', { tips })
-          }
+          const inx = random(0, hitokotos.length - 1)
+          const tips = hitokotos[inx].hitokoto
+          this.$store.dispatch('showTips', { tips })
           break
         case 'close':
           this.$store.dispatch('showTips', { tips: clickTips.close })
@@ -170,9 +165,9 @@ export default {
       this.isMini = isMini
     },
     dropPanel() {
-      this.$emit('dropPanel')
-    }
-  }
+      this.$store.commit('setShowPanel', true)
+    },
+  },
 }
 </script>
 

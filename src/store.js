@@ -13,7 +13,7 @@ import {
   queryHot,
   increaseHot,
   queryLike,
-  visitorStatistics
+  visitorStatistics,
 } from './utils/services'
 import { formatPost, formatCategory, formatInspiration, formatPage } from './utils/format'
 
@@ -25,49 +25,52 @@ export default new Vuex.Store({
   state: {
     tips: '',
     tipsUpdateAt: '',
-    totalCount: 0
+    totalCount: 0,
+    showPanel: false,
   },
   mutations: {
     // 设置一言
-    setTips(state, { tips }) {
+    setTips(state, tips) {
       state.tips = tips
       state.tipsUpdateAt = new Date()
     },
     // 设置文章总数
-    setTotalCount(state, { totalCount }) {
+    setTotalCount(state, totalCount) {
       state.totalCount = totalCount
-    }
+    },
+    // 设置是否显示看板
+    setShowPanel(state, status) {
+      state.showPanel = status
+    },
   },
   actions: {
     // 显示一言
     async showTips({ commit }, { tips }) {
       clearTimeout(tipsTimer)
-      commit('setTips', { tips })
+      commit('setTips', tips)
       tipsTimer = setTimeout(() => {
-        commit('setTips', { tips: '' })
+        commit('setTips', '')
       }, 6000)
     },
     // 获取文章总数
     async queryArchivesCount({ commit }) {
       const data = await queryArchivesCount()
       const totalCount = data.repository.issues.totalCount
-      commit('setTotalCount', { totalCount })
+      commit('setTotalCount', totalCount)
     },
     // 获取分类 & 标签筛选文章数量
     async queryFilterArchivesCount(context, payload) {
       const data = await queryFilterArchivesCount(payload)
-      const count = data.search.issueCount
-      return count
+      return data.search.issueCount
     },
     // 获取灵感总数
     async queryInspirationCount() {
       const data = await queryInspirationCount()
-      const count = data.repository.issues.totalCount
-      return count
+      return data.repository.issues.totalCount
     },
     // 获取归档
     async queryPosts(context, payload) {
-      let data = await queryPosts(payload)
+      const data = await queryPosts(payload)
       data.forEach(formatPost)
       return data
     },
@@ -81,43 +84,37 @@ export default new Vuex.Store({
     },
     // 获取文章详情
     async queryPost(context, { number }) {
-      let post = await queryPost(number)
-      post = formatPost(post)
-      return post
+      const post = await queryPost(number)
+      return formatPost(post)
     },
     // 获取分类
     async queryCategory() {
-      let data = await queryCategory()
-      data = formatCategory(data)
-      return data
+      const data = await queryCategory()
+      return formatCategory(data)
     },
     // 获取标签
     async queryTag() {
-      let data = await queryTag()
+      const data = await queryTag()
       const filterLabel = ['Inspiration', 'Friend', 'Book', 'About']
-      data = data.filter(o => !filterLabel.includes(o.name))
-      return data
+      return data.filter((o) => !filterLabel.includes(o.name))
     },
     // 获取灵感
     async queryInspiration(context, { page, pageSize }) {
-      let data = await queryInspiration({ page, pageSize })
-      data = formatInspiration(data)
-      return data
+      const data = await queryInspiration({ page, pageSize })
+      return formatInspiration(data)
     },
     // 获取书单 & 友链 & 关于
     async queryPage(context, { type }) {
-      let data = await queryPage(type)
-      data = formatPage(data, type)
-      return data
+      const data = await queryPage(type)
+      return formatPage(data, type)
     },
     // 获取点赞数
     async queryLike(context, payload) {
-      const data = await queryLike(payload)
-      return data
+      return await queryLike(payload)
     },
     // 统计访问来源
     async visitorStatistics(context, payload) {
       await visitorStatistics(payload)
-    }
-  }
+    },
+  },
 })
