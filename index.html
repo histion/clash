@@ -1,6 +1,58 @@
 
+<!--这是大遮罩-->
+<div id="box1">
 
 <!DOCTYPE html>
+
+<!--实现背景刷新切换-->
+
+<body background="" style="background-size:cover;
+background-attachment: fixed;">
+
+
+
+<script>
+    let imgArr = ["https://yun.histion.cf/%E5%A4%87%E4%BB%BD%E5%9B%BE/pixiv/86469791_p0.jpg", "https://yun.histion.cf/%E5%A4%87%E4%BB%BD%E5%9B%BE/pixiv/86343448_p0.png", "https://yun.histion.cf/%E5%A4%87%E4%BB%BD%E5%9B%BE/pixiv/81556176_p0.jpg"];
+    let num = 0;
+    let setNum = localStorage.getItem("num");
+    if (setNum) {
+        num = setNum
+    }
+    console.log(imgArr[num]);
+    document.body.style.backgroundImage = "url(" + imgArr[num] + ")"
+    if (num == imgArr.length - 1) {
+        num = 0;
+    } else {
+        num++;
+    }
+    localStorage.setItem("num", num)
+</script>
+<!--实现背景刷新切换-->
+
+
+
+
+<!-- MDUI CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+  integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+  crossorigin="anonymous"
+/>
+
+
+<style type="text/css">
+
+#box1 {
+  position: relative;
+  width: 55%;
+  margin: 0 auto;
+  margin-top: 20px;
+  background: rgba(99,184,255,0.4);
+  border: 1px solid #63B8FF;
+}
+
+    </style>
 <html lang="en">
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +69,7 @@
 <link href="css/chunk-vendors.43fc3011.css" rel="stylesheet">
 <link href="css/app.bddb0479.css" rel="stylesheet">
 <font color="purple">“我们的权利与生俱来，永别了，牢笼！”&emsp; &emsp;
-  <a href="https://github.com/histion/clash/raw/main/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.doc" style="color:green" target="_blank"> 看傻子级教程OvO</a> <br>
+  <a href="https://github.com/histion/histion.github.io/blob/main/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.doc?raw=true" style="color:green" target="_blank"> 看傻子级教程OvO</a> <br>
 <div style="margin-left:500px;">——塞拉斯</div></style> </font>
 </head>
 

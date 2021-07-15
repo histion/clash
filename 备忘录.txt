@@ -1,1 +1,2 @@
 chunk-1ffacd5c.b6cc770e.js增加配置
+chunk-vendors.43fc3011  el-card{border:1px solid #ebeef5;background-color:rgba(99,184,255,0.1);(修改颜色)
