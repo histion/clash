@@ -1,0 +1,18 @@
+{
+    "sourceFile": "README.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1646900091329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1646900091329,
+            "name": "Commit-0",
+            "content": "# 订阅转换-点击下方链接（2022.3.10，已更新后端链接，现已支持新版clash）\r\n\r\n[塞拉斯版acl4ssr](https://histion.github.io/)\r\n\r\n<br>\r\n\r\n[本订阅转换定制配置预览页面](https://github.com/histion/bcgz/tree/config)\r\n\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<img src=\"./Sylas.png\" width=\"512\" height=\"512\"/>\r\n\r\n↑解释：塞拉斯版——即偷来的（2333）\r\n"
+        }
+    ]
+}
