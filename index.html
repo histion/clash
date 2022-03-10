@@ -4,6 +4,27 @@
 
 <!DOCTYPE html>
 
+
+    <!-- 这是一个视频背景-->
+    <video autoplay loop poster="vide.jpg" id="bgvid">
+    
+      <source src="https://yun.histion.cf/images/2021/%E5%A3%81%E7%BA%B8.mp4" type="video/mp4">
+  </video>
+  <style>
+      video#bgvid {
+      position: fixed; 
+      right: 0;
+      bottom: 0;
+      min-width: 50%;
+      min-height: 50%;
+      width: 100%;
+      height: auto;
+      z-index: -100;
+  }
+  </style>
+
+
+
 <!--实现背景刷新切换-->
 
 <body background="" style="background-size:cover;
@@ -12,7 +33,7 @@ background-attachment: fixed;">
 
 
 <script>
-    let imgArr = ["https://yun.histion.cf/%E5%A4%87%E4%BB%BD%E5%9B%BE/pixiv/86469791_p0.jpg", "https://yun.histion.cf/%E5%A4%87%E4%BB%BD%E5%9B%BE/pixiv/86343448_p0.png", "https://yun.histion.cf/%E5%A4%87%E4%BB%BD%E5%9B%BE/pixiv/81556176_p0.jpg"];
+    let imgArr = ["ht暂时不用tps://yun.histion.cf/%E5%A4%87%E4%BB%BD%E5%9B%BE/pixiv/86469791_p0.jpg", "http暂时不用s://yun.histion.cf/%E5%A4%87%E4%BB%BD%E5%9B%BE/pixiv/86343448_p0.png", "htt暂时不用ps://yun.histion.cf/%E5%A4%87%E4%BB%BD%E5%9B%BE/pixiv/81556176_p0.jpg"];
     let num = 0;
     let setNum = localStorage.getItem("num");
     if (setNum) {
