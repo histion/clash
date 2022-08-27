@@ -838,7 +838,7 @@
                 },
                 l = [],
                 i = (o("4de4"), o("c975"), o("b64b"), o("d3b7"), o("ac1f"), o("25f0"), o("5319"), "https://github.com/histion/histion.github.io"),
-                a = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini",
+                a = "https://raw.githubusercontent.com/histion/bcgz/config/config/histion-1.ini",
                 r = "https://github.com/tindy2013/subconverter/releases",
                 s = "https://sub.xeton.dev/sub?",
                 c = "clash&new_name=true",
@@ -900,9 +900,6 @@
                                         label: "ACL4SSR",
                                         options: [{
                                             label: "histion个人定制-1（网易云-港澳台-自动测速-故障转移-自补充规则）",
-                                            value: "https://raw.githubusercontent.com/histion/bcgz/config/config/histion-1.ini"
-                                        }, {
-                                            label: "histion个人定制-2（已删除，还是定制1）",
                                             value: "https://raw.githubusercontent.com/histion/bcgz/config/config/histion-1.ini"
                                         }, {
                                             label: "openclash",
