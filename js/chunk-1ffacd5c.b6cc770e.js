@@ -871,7 +871,7 @@
                                         Surge2: "surge&ver=2"
                                     },
                                     customBackend: {
-                                        "localhost:25500 本地版": "http://localhost:25500/sub?",
+                                        "自建后端(安全推荐)": "https://clash-sub.histion.workers.dev/sub?",
                                         "sub.xeton(新版clash可用)": "https://sub.xeton.dev/sub?",
                                         "subconverter-web.now.sh(subconverter作者提供2-稳定)": "https://subconverter-web.now.sh/sub?",
                                         "subconverter.herokuapp.com(subconverter作者提供3-稳定)": "https://subconverter.herokuapp.com/sub?",
@@ -880,7 +880,7 @@
                                         "api.wcc.best(sub-web作者提供-稳定)": "https://api.wcc.best/sub?"
                                     },
                                     backendOptions: [{
-                                        value: "http://localhost:25500/sub?"
+                                        value: "https://clash-sub.histion.workers.dev/sub?"
                                     }, {
                                         value: "https://sub.xeton.dev/sub?"
                                     }, {
