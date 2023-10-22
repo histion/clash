@@ -893,8 +893,8 @@
                                     remoteConfig: [{
                                         label: "默认",
                                         options: [{
-                                            label: "不选，由接口提供方提供",
-                                            value: ""
+                                            label: "histion个人定制-1（网易云-港澳台-自动测速-故障转移-自补充规则）",
+                                            value: "https://raw.githubusercontent.com/histion/bcgz/config/config/histion-1.ini"
                                         }]
                                     }, {
                                         label: "ACL4SSR",

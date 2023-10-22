@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1646898308913,
@@ -36,6 +36,10 @@
                 {
                     "date": 1697945359943,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -879,9 +879,9 @@\n                                         \"api.dler.io(sub作者&lhie1提供-稳定)\": \"https://api.dler.io/sub?\",\r\n                                         \"api.wcc.best(sub-web作者提供-稳定)\": \"https://api.wcc.best/sub?\"\r\n                                     },\r\n                                     backendOptions: [{\r\n-                                        value: \"http://localhost:25500/sub?\"\r\n+                                        value: \"https://clash-sub.histion.workers.dev/sub?\"\r\n                                     }, {\r\n                                         value: \"https://sub.xeton.dev/sub?\"\r\n                                     }, {\r\n                                         value: \"https://subconverter-web.now.sh/sub?\"\r\n"
+                },
+                {
+                    "date": 1697946224011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -892,10 +892,10 @@\n                                     }],\r\n                                     remoteConfig: [{\r\n                                         label: \"默认\",\r\n                                         options: [{\r\n-                                            label: \"不选，由接口提供方提供\",\r\n-                                            value: \"\"\r\n+                                            label: \"histion个人定制-1（网易云-港澳台-自动测速-故障转移-自补充规则）\",\r\n+                                            value: \"https://raw.githubusercontent.com/histion/bcgz/config/config/histion-1.ini\"\r\n                                         }]\r\n                                     }, {\r\n                                         label: \"ACL4SSR\",\r\n                                         options: [{\r\n"
                 }
             ],
             "date": 1646898308913,
