@@ -872,23 +872,21 @@
                                     },
                                     customBackend: {
                                         "自建后端(安全推荐)": "https://clash-sub.histion.workers.dev/sub?",
+                                        "肥羊1": "https://url.v1.mk/sub?",
+                                        "肥羊2": "https://sub.d1.mk/sub?",
                                         "sub.xeton(新版clash可用)": "https://sub.xeton.dev/sub?",
-                                        "subconverter-web.now.sh(subconverter作者提供2-稳定)": "https://subconverter-web.now.sh/sub?",
-                                        "subconverter.herokuapp.com(subconverter作者提供3-稳定)": "https://subconverter.herokuapp.com/sub?",
-                                        "sub.id9.cc(品云提供-稳定)": "https://sub.id9.cc/sub?",
-                                        "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
-                                        "api.wcc.best(sub-web作者提供-稳定)": "https://api.wcc.best/sub?"
+                                        "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?"
                                     },
                                     backendOptions: [{
                                         value: "https://clash-sub.histion.workers.dev/sub?"
                                     }, {
+                                        value: "https://url.v1.mk/sub?"
+                                    }, {
+                                        value: "https://sub.d1.mk/sub?"
+                                    }, {
                                         value: "https://sub.xeton.dev/sub?"
                                     }, {
-                                        value: "https://subconverter-web.now.sh/sub?"
-                                    }, {
-                                        value: "https://subconverter.herokuapp.com/sub?"
-                                    }, {
-                                        value: "https://api.wcc.best/sub?"
+                                        value: "https://api.dler.io/sub?"
                                     }],
                                     remoteConfig: [{
                                         label: "默认",
