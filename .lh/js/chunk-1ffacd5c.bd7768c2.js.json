@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1646898593044,
@@ -24,6 +24,18 @@
                 {
                     "date": 1697946133279,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -878,9 +878,9 @@\n                                         \"api.dler.io(sub作者&lhie1提供-稳定)\": \"https://api.dler.io/sub?\",\r\n                                         \"api.wcc.best(sub-web作者提供-稳定)\": \"https://api.wcc.best/sub?\"\r\n                                     },\r\n                                     backendOptions: [{\r\n-                                        value: \"http://localhost:25500/sub?\"\r\n+                                        value: \"https://clash-sub.histion.workers.dev/sub?\"\r\n                                     }, {\r\n                                         value: \"https://sub.xeton.dev/sub?\"\r\n                                     }, {\r\n                                         value: \"https://subconverter-web.now.sh/sub?\"\r\n"
+                },
+                {
+                    "date": 1734794259319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -871,13 +871,12 @@\n                                         v2ray: \"v2ray\"\r\n                                     },\r\n                                     customBackend: {\r\n                                         \"自建后端(安全推荐)\": \"https://clash-sub.histion.workers.dev/sub?\",\r\n+                                        \"肥羊1\": \"https://url.v1.mk/sub?\",\r\n+                                        \"熊猫（推荐）\": \"https://sub.maoxiongnet.com/sub?\",\r\n                                         \"sub.xeton(新版clash可用)\": \"https://sub.xeton.dev/sub?\",\r\n-                                        \"subconverter-web.now.sh(subconverter作者提供2-稳定)\": \"https://subconverter-web.now.sh/sub?\",\r\n-                                        \"subconverter.herokuapp.com(subconverter作者提供3-稳定)\": \"https://subconverter.herokuapp.com/sub?\",\r\n-                                        \"api.dler.io(sub作者&lhie1提供-稳定)\": \"https://api.dler.io/sub?\",\r\n-                                        \"api.wcc.best(sub-web作者提供-稳定)\": \"https://api.wcc.best/sub?\"\r\n+                                        \"api.dler.io(sub作者&lhie1提供-稳定)\": \"https://api.dler.io/sub?\"\r\n                                     },\r\n                                     backendOptions: [{\r\n                                         value: \"https://clash-sub.histion.workers.dev/sub?\"\r\n                                     }, {\r\n"
+                },
+                {
+                    "date": 1734794272903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -879,15 +879,15 @@\n                                     },\r\n                                     backendOptions: [{\r\n                                         value: \"https://clash-sub.histion.workers.dev/sub?\"\r\n                                     }, {\r\n-                                        value: \"https://sub.xeton.dev/sub?\"\r\n+                                        value: \"https://url.v1.mk/sub?\"\r\n                                     }, {\r\n-                                        value: \"https://subconverter-web.now.sh/sub?\"\r\n+                                        value: \"https://sub.maoxiongnet.com/sub?\"\r\n                                     }, {\r\n-                                        value: \"https://subconverter.herokuapp.com/sub?\"\r\n+                                        value: \"https://sub.xeton.dev/sub?\"\r\n                                     }, {\r\n-                                        value: \"https://api.wcc.best/sub?\"\r\n+                                        value: \"https://api.dler.io/sub?\"\r\n                                     }],\r\n                                     remoteConfig: [{\r\n                                         label: \"默认\",\r\n                                         options: [{\r\n"
+                },
+                {
+                    "date": 1734794305601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -890,10 +890,10 @@\n                                     }],\r\n                                     remoteConfig: [{\r\n                                         label: \"默认\",\r\n                                         options: [{\r\n-                                            label: \"不选，由接口提供方提供\",\r\n-                                            value: \"\"\r\n+                                            label: \"histion个人定制-1（网易云-港澳台-自动测速-故障转移-自补充规则）\",\r\n+                                            value: \"https://raw.githubusercontent.com/histion/bcgz/config/config/histion-1.ini\"\r\n                                         }]\r\n                                     }, {\r\n                                         label: \"ACL4SSR\",\r\n                                         options: [{\r\n"
                 }
             ],
             "date": 1646898593044,

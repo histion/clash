@@ -873,7 +873,7 @@
                                     customBackend: {
                                         "自建后端(安全推荐)": "https://clash-sub.histion.workers.dev/sub?",
                                         "肥羊1": "https://url.v1.mk/sub?",
-                                        "肥羊2": "https://sub.d1.mk/sub?",
+                                        "熊猫（推荐）": "https://sub.maoxiongnet.com/sub?",
                                         "sub.xeton(新版clash可用)": "https://sub.xeton.dev/sub?",
                                         "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?"
                                     },
@@ -882,7 +882,7 @@
                                     }, {
                                         value: "https://url.v1.mk/sub?"
                                     }, {
-                                        value: "https://sub.d1.mk/sub?"
+                                        value: "https://sub.maoxiongnet.com/sub?"
                                     }, {
                                         value: "https://sub.xeton.dev/sub?"
                                     }, {
